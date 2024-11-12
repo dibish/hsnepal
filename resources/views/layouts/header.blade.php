@@ -1,5 +1,5 @@
 <header class="bg-white w-full py-2">
-    <nav class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
+    <nav class="container mx-auto flex justify-between items-center px-4 md:px-0 py-2">
         <a href="{{ route('page.home') }}">
             <img class="w-[120px]" src="{{ asset('images/HomestayNepal.png') }}" alt="home stay neapl logo" />
         </a>
