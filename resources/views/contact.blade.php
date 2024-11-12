@@ -8,10 +8,16 @@
     </section>
     <section class="container py-14">
         <h2 class="py-8 text-2xl">Use below form to contact us</h2>
-        <div class="max-w-3xl bg-white p-8 shadow-md rounded-lg">
-            <form class="space-y-4 py-6" action="" method="post">
 
-                <!-- Name -->
+        <div class="max-w-3xl bg-white p-8 shadow-md rounded-lg">
+            @if (session('success'))
+                <div class="text-green-600 font-semibold bg-green-100 border border-green-300 p-2 rounded-md">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <form class="space-y-4 py-6" action="{{ route('contactMessage') }}" method="post">
+
+                @csrf
                 <div>
                     <x-input-label for="name" :value="__('Name')" />
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
@@ -21,7 +27,7 @@
                 <!-- Email Address -->
                 <div>
                     <x-input-label for="email" :value="__('Email')" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                    <x-text-input id="email" class="block mt-1 w-full" type="text" name="email"
                         :value="old('email')" autofocus autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>

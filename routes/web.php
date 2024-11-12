@@ -1,20 +1,14 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-})->name('page.home');
-
-Route::get('/about-us', function () {
-    return view('about');
-})->name('page.about');
-
-Route::get('/contact-us', function () {
-    return view('contact');
-})->name('page.contact');
+Route::get('/', [PageController::class, 'index'])->name('page.home');
+Route::get('/about-us', [PageController::class, 'about'])->name('page.about');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('page.contact');
+Route::post('/contact-us', [PageController::class, 'contactMessage'])->name('contactMessage');
 
 Route::get('/user/dashboard', function () {
     return view('user.dashboard');
