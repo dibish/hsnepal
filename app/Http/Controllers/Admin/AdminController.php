@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Message;
 
 class AdminController extends Controller
 {
-    //
+    function index(){
+        $data['message_count'] = Message::count();
+        return view('admin.dashboard',compact('data'));
+    }
 }
