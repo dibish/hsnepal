@@ -1,14 +1,14 @@
 <header class="bg-white w-full py-2">
     <nav class="container mx-auto flex justify-between items-center px-4 md:px-0 py-2">
         <a href="{{ route('page.home') }}">
-            <img class="w-[120px]" src="{{ asset('images/HomestayNepal.png') }}" alt="home stay neapl logo" />
+            <img class="w-[120px] md:w-[160px]" src="{{ asset('images/HomestayNepal.png') }}" alt="home stay neapl logo" />
         </a>
 
-        <div class="flex gap-4 items-center font-semibold">
-            <a href="{{ route('page.home') }}">Home</a>
-            <a href="#">Browse Homestay</a>
-            <a href="{{ route('page.about') }}">About us</a>
-            <a href="{{ route('page.contact') }}">Contact us</a>
+        <div class="flex gap-6 items-center font-semibold">
+            <a class="hidden lg:inline-block" href="{{ route('page.home') }}">Home</a>
+            <a class="hidden lg:inline-block" href="#">Browse Homestay</a>
+            <a class="hidden lg:inline-block" href="{{ route('page.about') }}">About us</a>
+            <a class="hidden lg:inline-block" href="{{ route('page.contact') }}">Contact us</a>
             @guest
                 <a href="{{ route('login') }}"
                     class="bg-blue-800 hover:bg-blue-600 font-semibold rounded-md px-3 py-1 text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">Login</a>

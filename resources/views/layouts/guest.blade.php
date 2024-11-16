@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans  bg-gray-100 text-gray-900 antialiased">
+<body class="font-sans  bg-gray-300 text-gray-900 antialiased">
     @include('layouts.header')
     <div class="flex flex-col sm:justify-center items-center">
         <div class="w-full">

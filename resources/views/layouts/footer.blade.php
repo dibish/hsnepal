@@ -1,10 +1,10 @@
 <footer class="bg-blue-800 py-12">
-    <div class="container flex justify-between gap-12 text-white">
+    <div class="container flex flex-wrap justify-between gap-12 text-white">
         <div class="text-sm space-y-2">
             <strong class="text-base">Homestay Nepal</strong>
-            <address class="not-italic pt-2">Damauli Tanahun</address>
-            <p>Phone: +977 65560085</p>
-            <p>Email: info@homestaynepal.net</p>
+            <address class="not-italic pt-2">Byas 2, Damauli Tanahun</address>
+            <a class="block" href="tel:+977 65560085">Phone: +977 65560085</a>
+            <a href="mailto:info@homestaynepal.net">Email: info@homestaynepal.net</a>
         </div>
         <div class="flex flex-col text-sm space-y-2">
             <strong class="text-base mb-2">Homestay Owner</strong>
