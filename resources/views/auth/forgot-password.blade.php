@@ -1,5 +1,5 @@
-<x-guest-layout>
-    <div class="sm:max-w-[400px] mx-auto mt-6 px-6 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg">
+<x-app-layout>
+    <div class="sm:max-w-[400px] mx-auto my-16 mb-64 px-6 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg">
         <div class="mb-4 text-sm text-center text-gray-600">
             Enter email address that you registered with us. We will send you password reset link.
         </div>
@@ -25,4 +25,4 @@
             </div>
         </form>
     </div>
-</x-guest-layout>
+</x-app-layout>

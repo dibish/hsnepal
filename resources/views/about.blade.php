@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <section class="relative h-[300px] overflow-hidden flex items-center">
         <img class="absolute -z-1 w-full object-bottom object-cover brightness-50"
             src="{{ asset('/images/about-home-stay-nepal.webp') }}" alt="homestay nepal">
@@ -39,4 +39,4 @@
         </div>
     </section>
 
-</x-guest-layout>
+</x-app-layout>

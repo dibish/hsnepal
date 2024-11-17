@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <section class="relative h-[580px] overflow-hidden bg-no-repeat bg-center bg-cover"
         style="background-image: url({{ asset('/images/hero-home.webp') }});">
         <div class="absolute inset-0 bg-gradient-to-b from-black/95 via-black/50 to-transparent">
@@ -30,7 +30,7 @@
             <div class="p-2 bg-white shadow-lg rounded">
                 <img class="w-full" src="{{ asset('/images/homestay-photo.webp') }}" alt="Homestay name">
                 <div class="flex gap-2 py-2">
-                    <img src="{{ asset('/images/star-outline.svg') }}" alt="homestay rating">
+                    <img src="{{ asset('/images/star-solid.svg') }}" alt="homestay rating">
                     <img src="{{ asset('/images/star-outline.svg') }}" alt="homestay rating">
                     <img src="{{ asset('/images/star-outline.svg') }}" alt="homestay rating">
                     <img src="{{ asset('/images/star-outline.svg') }}" alt="homestay rating">
@@ -89,4 +89,4 @@
             </div>
         </div>
     </section>
-</x-guest-layout>
+</x-app-layout>

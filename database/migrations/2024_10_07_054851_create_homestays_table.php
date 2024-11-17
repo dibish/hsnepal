@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
-            $table->string('logo');
+            $table->string('cover_photo');
+            $table->boolean('status')->default(0);
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });

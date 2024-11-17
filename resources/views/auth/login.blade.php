@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <!-- Session Status -->
     <div class="sm:max-w-[400px] mx-auto my-20 py-6 px-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -48,4 +48,4 @@
             </div>
         </form>
     </div>
-</x-guest-layout>
+</x-app-layout>

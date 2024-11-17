@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="mx-auto sm:max-w-4xl my-20 py-6 px-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
         <h3 class="font-bold text-xl text-center mb-6 text-gray-600">Register</h3>
         <form method="POST" action="{{ route('register') }}" class="max-w-6xl grid grid-cols-2 gap-4">
@@ -113,4 +113,4 @@
         </form>
     </div>
     <div class="h-16"></div>
-</x-guest-layout>
+</x-app-layout>

@@ -11,18 +11,21 @@ class Homestay extends Model
 {
     use HasFactory;
 
-protected $illable =[ 'name','description','phone','email','address','logo','user_id'];
+    protected $fillable = ['name', 'description', 'phone', 'email', 'address', 'cover_photo', 'status', 'user_id'];
 
 
-    function user():BelongsTo{
+    function user(): BelongsTo
+    {
 
         return $this->belongsTo(User::class);
     }
-    function rooms():HasMany{
+    function rooms(): HasMany
+    {
 
         return $this->hasMany(Room::class);
     }
-    function amenities():HasMany{
+    function amenities(): HasMany
+    {
 
         return $this->hasMany(Amenities::class);
     }
