@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\HomestayOwner;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,8 +21,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('address');
             $table->string('cover_photo');
-            $table->boolean('status')->default(0);
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->foreignIdFor(HomestayOwner::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

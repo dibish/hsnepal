@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'homestayOwner' => [
+            'driver' => 'session',
+            'provider' => 'homestayowners',
+        ],
     ],
 
     /*
@@ -63,6 +71,14 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+        ],
+        'homestayowners' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\HomestayOwner::class),
         ],
 
         // 'users' => [

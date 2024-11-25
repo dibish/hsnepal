@@ -15,7 +15,7 @@
                     <a class="text-blue-500 underline inline-block"
                         href="{{ route('homestay.edit', $hstay->id) }}">Edit</a>
                     <span
-                        class="{{ $hstay->status ? 'text-green-600' : 'text-gray-600' }} }}">{{ $hstay->status ? 'Approved' : 'Pending' }}</span>
+                        class="{{ $hstay->status == 'approved' ? 'text-green-600' : 'text-gray-600' }} capitalize">{{ $hstay->status }}</span>
                 </div>
             @endforeach
         </div>

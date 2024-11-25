@@ -10,10 +10,14 @@ class Room extends Model
     use HasFactory;
 
 
-    function homestay(){
+    function homestay()
+    {
 
         return $this->belongsTo(Homestay::class);
     }
+
+    function booking()
+    {
+        return $this->belongsTo(Booking::class);
+    }
 }
-
-

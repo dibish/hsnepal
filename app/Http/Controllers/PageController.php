@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Homestay;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -10,7 +11,8 @@ class PageController extends Controller
 {
     function index()
     {
-        return view('home');
+        $homestays = Homestay::with('reviews')->where('status', 'approved')->orderBy('created_at', 'desc')->get();
+        return view('home', compact('homestays'));
     }
 
     function about()
@@ -42,7 +44,7 @@ class PageController extends Controller
 
         Mail::raw("Name: {$request->name}\nEmail: {$request->email}\nMessage: {$request->message}", function ($message) {
             $message->to('pramitagrgotame75@gmail.com')
-                    ->subject('New Contact Form Submission');
+                ->subject('New Contact Form Submission');
         });
 
         return redirect()->route('page.contact')->with('success', 'Your message has been sent successfully!');

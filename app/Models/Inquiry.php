@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Inquiry extends Model
 {
     use HasFactory;
+
+    function homestay()
+    {
+        return $this->belongsTo(Homestay::class);
+    }
 }

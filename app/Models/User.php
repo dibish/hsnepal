@@ -3,14 +3,18 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Filament\Panel;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
     use HasFactory, Notifiable;
+
+    protected $guard = 'user';
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +28,6 @@ class User extends Authenticatable
         'phone',
         'address',
         'gender',
-        'user_type',
         'nationality'
     ];
 
@@ -36,6 +39,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'email_verified_at',
     ];
 
     /**
@@ -51,8 +55,15 @@ class User extends Authenticatable
         ];
     }
 
-    function homestay(){
+    function booking()
+    {
+        return $this->hasOne(Booking::class);
+    }
 
-        return $this->hasOne(Homestay::class);
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
+        // return $this->user_type === "admin" && $this->hasVerifiedEmail();
+        return true;
     }
 }

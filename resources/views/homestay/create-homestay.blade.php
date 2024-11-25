@@ -17,7 +17,7 @@
             <div class="flex flex-col space-y-2">
                 <label class="block font-medium text-sm text-gray-700" for="name">Homestay Name</label>
                 <input class="border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm"
-                    type="text" name="name" />
+                    type="text" name="name" value="{{ old('name') }}" />
                 @error('name')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -25,15 +25,15 @@
             <div class="flex flex-col space-y-2">
                 <label class="block font-medium text-sm text-gray-700" for="phone">Phone Number</label>
                 <input class="border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm"
-                    type="text" name="phone" />
+                    type="text" name="phone" value="{{ old('phone') }}" />
                 @error('phone')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="flex flex-col space-y-2">
-                <label class="block font-medium text-sm text-gray-700" for="email">Email</label>
+                <label class="block font-medium text-sm text-gray-700" for="email">Homestay's email</label>
                 <input class="border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm"
-                    type="text" name="email" />
+                    type="text" name="email" value="{{ old('email') }}" />
                 @error('email')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -41,7 +41,7 @@
             <div class="flex flex-col space-y-2">
                 <label class="block font-medium text-sm text-gray-700" for="address">Address</label>
                 <input class="border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm"
-                    type="text" name="address" />
+                    type="text" name="address" value="{{ old('address') }}" />
                 @error('address')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -49,15 +49,17 @@
             <div class="flex flex-col space-y-2">
                 <label class="block font-medium text-sm text-gray-700" for="description">Description</label>
                 <textarea class="border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm" type="text"
-                    name="description"></textarea>
+                    name="description" rows="5">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="flex flex-col space-y-2">
-                <label for="cover_photo" class="block font-medium text-sm text-gray-700">Upload cover photo</label>
-                <input type="file" id="cover_photo" name="cover_photo" />
-                @error('logo')
+                <label for="cover_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload
+                    cover photo</label>
+                <input type="file" id="cover_photo" name="cover_photo"
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
+                @error('cover_photo')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>

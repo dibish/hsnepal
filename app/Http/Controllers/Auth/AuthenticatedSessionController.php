@@ -35,12 +35,12 @@ class AuthenticatedSessionController extends Controller
 
         if (Auth::user()->user_type === "admin") {
 
-            return redirect()->intended(route('admin.dashboard', absolute: false));
+            return redirect()->intended(route('filament.admin.pages.dashboard', absolute: false));
         }
 
         if (Auth::user()->user_type === "homestay_owner") {
 
-            return redirect()->intended(route('homestay.dashboard', absolute: false));
+            return redirect()->intended(route('filament.homestay.pages.dashboard', absolute: false));
         }
 
         return redirect()->intended(route('dashboard', absolute: false));

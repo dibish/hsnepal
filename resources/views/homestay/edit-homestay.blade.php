@@ -57,16 +57,19 @@
                 @enderror
             </div>
             <div class="flex flex-col space-y-2">
-                <label for="cover_photo" class="block font-medium text-sm text-gray-700">Upload cover photo</label>
-                <input type="file" id="cover_photo" name="cover_photo" />
+                <label for="cover_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Change
+                    Cover Photo</label>
+                <input type="file" id="cover_photo" name="cover_photo"
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
                 @if ($homestay->cover_photo)
                     <p class="mt-2 text-sm text-gray-500">Current Cover Photo:</p>
                     <div class="">
-                        <img class="w-[250px] h-[200px] object-cover"
+                        <img class="w-[250px] h-[2
+                        00px] object-cover"
                             src="{{ asset('storage/' . $homestay->cover_photo) }}" alt="coverphoto">
                     </div>
                 @endif
-                @error('logo')
+                @error('cover_photo')
                     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>

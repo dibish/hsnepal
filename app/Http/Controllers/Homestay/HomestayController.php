@@ -23,6 +23,12 @@ class HomestayController extends Controller
         return view('homestay.create-homestay', compact('homestayCount'));
     }
 
+    function show($id)
+    {
+        $homestay = Homestay::findOrFail($id);
+        return view('homestay.homestay-details', compact('homestay'));
+    }
+
 
     function store(Request $request)
     {
@@ -44,18 +50,22 @@ class HomestayController extends Controller
         ]);
 
         // Handle file upload
-        $logoPath = $request->file('cover_photo')->store('homestays', 'public');
+        $coverPhotoPath = $request->file('cover_photo')->store('homestays', 'public');
+        $validatedData['cover_photo'] = $coverPhotoPath;
+        $validatedData['user_id'] = Auth::user()->id;
 
         // Create a new Homestay
-        Homestay::create([
-            'name' => $validatedData['name'],
-            'description' => $validatedData['description'],
-            'phone' => $validatedData['phone'],
-            'email' => $validatedData['email'],
-            'address' => $validatedData['address'],
-            'cover_photo' => $logoPath,
-            'user_id' => Auth::user()->id, // Ensure the user is authenticated
-        ]);
+        // Homestay::create([
+        //     'name' => $validatedData['name'],
+        //     'description' => $validatedData['description'],
+        //     'phone' => $validatedData['phone'],
+        //     'email' => $validatedData['email'],
+        //     'address' => $validatedData['address'],
+        //     'cover_photo' => $coverPhotoPath,
+        //     'user_id' => Auth::user()->id, // Ensure the user is authenticated
+        // ]);
+
+        Homestay::create($validatedData);
 
         return redirect()->back()->with('success', 'Homestay created successfully!');
     }

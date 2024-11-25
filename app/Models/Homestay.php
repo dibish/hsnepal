@@ -14,19 +14,31 @@ class Homestay extends Model
     protected $fillable = ['name', 'description', 'phone', 'email', 'address', 'cover_photo', 'status', 'user_id'];
 
 
-    function user(): BelongsTo
+    function HomestayOwner(): BelongsTo
     {
-
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(HomestayOwner::class);
     }
     function rooms(): HasMany
     {
-
         return $this->hasMany(Room::class);
     }
     function amenities(): HasMany
     {
-
         return $this->hasMany(Amenities::class);
+    }
+
+    function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    function inquires()
+    {
+        return $this->hasMany(Inquiry::class);
+    }
+
+    function expenditures()
+    {
+        return $this->hasMany(Expenditure::class);
     }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Expenditure extends Model
 {
     use HasFactory;
+
+    function homestay()
+    {
+        return $this->belongsTo(Homestay::class);
+    }
 }

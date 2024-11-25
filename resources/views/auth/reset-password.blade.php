@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="sm:max-w-[400px] mx-auto py-16 px-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <div class="sm:max-w-[400px] mx-auto my-16 py-16 px-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
         <form method="POST" action="{{ route('password.store') }}">
             <h3 class="font-bold text-xl text-center mb-6 text-gray-600">Reset your password</h3>
             @csrf

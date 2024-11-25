@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Booking;
 use App\Models\Homestay;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->integer('no_of_beds');
             $table->boolean('has_attach_bathroom');
             $table->boolean('is_available');
+            $table->foreignIdFor(Booking::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(Homestay::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
